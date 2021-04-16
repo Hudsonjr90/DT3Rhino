@@ -14,7 +14,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #f5f3f3;
+    background: #f0f0f0;
 }
 
 .circle {
@@ -24,7 +24,7 @@ section {
     width: 100%;
     height: 100%;
     background: #551818;
-    clip-path: circle(70% at right -45%);
+    clip-path: circle(70% at right -30%);
 }
 
 header {
@@ -54,7 +54,7 @@ header ul li {
 
 header ul li a {
     display: inline-block;
-    color: rgb(8, 8, 8);
+    color: rgb(255, 255, 255);
     font-weight: 1500;
     margin-left: 60px;
     text-decoration: none;
@@ -75,7 +75,7 @@ header ul li a {
 }
 
 .content .textBox h2 {
-    color: #fff;
+    color: rgb(7, 7, 7);
     font-size: 3em;
     margin-bottom: 10px;
     line-height: 1.4em;
@@ -83,7 +83,7 @@ header ul li a {
 }
 
 .content .textBox p {
-    color: #fff;
+    color: rgb(7, 7, 7);
 }
 
 .content .textBox a {
@@ -91,7 +91,7 @@ header ul li a {
     margin-top: 20px;
     padding: 8px 20px;
     background: #e51e2a;
-    color: #fff;
+    color: rgb(0, 0, 0);
     border-radius: 40px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -127,7 +127,7 @@ header ul li a {
     background: transparent;
     width: 50px;
     height: 50px;
-    background: #222;
+    background: rgb(0, 0, 0);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -141,7 +141,7 @@ header ul li a {
 }
 
 .sci li a:hover {
-    background: #66161b;
+    background: #000000;
     transform: translateY(-10px);
 }
 
@@ -192,7 +192,7 @@ header ul li a {
         left: 0;
         width: 100%;
         height: 100%;
-        background: #dbd9d9;
+        background: #181717;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -203,7 +203,7 @@ header ul li a {
         position: relative;
         width: 30px;
         height: 30px;
-        background: url(menu.png);
+        background: url(img/menu.png);
         background-size: 30px;
         background-position: center;
         background-repeat: no-repeat;
@@ -215,7 +215,7 @@ header ul li a {
         right: 40px;
         width: 30px;
         height: 30px;
-        background: url(close.png);
+        background: url(img/close.png);
         background-size: 25px;
         background-position: center;
         background-repeat: no-repeat;
@@ -265,4 +265,71 @@ html {
     50% {
         transform: translateY(100px);
     }
+}
+
+.wrapper {
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+}
+
+.card {
+    width: 280px;
+    height: 360px;
+    padding: 2rem 1rem;
+    background: #fff;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(20px);
+}
+
+.card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgb(22, 2, 2));
+    z-index: 2;
+    transition: 0.5s all;
+    opacity: 0;
+}
+
+.card:hover:before {
+    opacity: 1;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card .info {
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    opacity: 1;
+    transform: translateY(30px);
+    transition: 0.5s all;
+}
+
+.card:hover .info {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.card .info h1 {
+    margin: 0;
 }

@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f0f0f0;
+}
+
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #551818;
+    clip-path: circle(70% at right -30%);
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    position: relative;
+    max-width: 150px;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    font-weight: 1500;
+    margin-left: 60px;
+    text-decoration: none;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .textBox {
+    position: relative;
+    max-width: 600px;
+    margin-right: 20px;
+}
+
+.content .textBox h2 {
+    color: rgb(7, 7, 7);
+    font-size: 3em;
+    margin-bottom: 10px;
+    line-height: 1.4em;
+    font-weight: 700;
+}
+
+.content .textBox p {
+    color: rgb(7, 7, 7);
+}
+
+.content .textBox a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #e51e2a;
+    color: rgb(0, 0, 0);
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.content .imgBox {
+    width: 700px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content .imgBox img {
+    max-width: 150px;
+}
+
+.sci {
+    position: absolute;
+    bottom: 40px;
+    left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci li a {
+    display: inline-block;
+    margin-right: 15px;
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    background: rgb(0, 0, 0);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease-in-out;
+}
+
+.sci li a img {
+    filter: invert(1);
+    transform: scale(0.5);
+}
+
+.sci li a:hover {
+    background: #000000;
+    transform: translateY(-10px);
+}
+
+
+/********Slider********/
+
+.swiper-container {
+    max-width: 900px;
+}
+
+.swiper-slide {
+    position: relative;
+    background-position: left;
+    background-size: cover;
+    height: 500px;
+    width: 180px;
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-slide img {
+    position: absolute;
+    bottom: 0;
+    max-height: 100%;
+}
+
+.swiper-container-3d .swiper-slide-shadow-right,
+.swiper-container-3d .swiper-slide-shadow-left {
+    background-image: none;
+}
+
+@media (max-width: 991px) {
+    section {
+        padding: 150px 40px;
+    }
+    .circle {
+        clip-path: circle(60% at right 0%);
+    }
+    header {
+        padding: 40px;
+    }
+    header ul.navigation {
+        display: none;
+    }
+    header ul.navigation.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #181717;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1000;
+    }
+    .toggle {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background: url(img/menu.png);
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        z-index: 10000;
+    }
+    .toggle.active {
+        position: fixed;
+        right: 40px;
+        width: 30px;
+        height: 30px;
+        background: url(img/close.png);
+        background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+    header ul li a {
+        margin: 10px 0;
+        margin-left: 0;
+        font-size: 1.5em;
+        font-weight: 300;
+    }
+    .content {
+        flex-direction: column;
+    }
+    .content .textBox {
+        margin-bottom: 50px;
+    }
+    .content .textBox,
+    .content .imgBox {
+        max-width: 100%;
+    }
+    .content .textBox h2 {
+        font-size: 2.5em;
+    }
+    .sci {
+        left: 40px;
+    }
+    .swiper-slide {
+        height: 300px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.imgBx img {
+    max-width: 400px;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0%,
+    100% {
+        transform: translateY(50px);
+    }
+    50% {
+        transform: translateY(100px);
+    }
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 .boxy {
+    transform-style: preserve-3d;
+    animation: animate 15s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateX(0deg) rotate(25deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateX(360deg) rotate(25deg);
+    }
+}
+
+.container2 .boxy span {
+    position: absolute;
+    color: rgb(235, 234, 238);
+    font-size: 3.5em;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 0 10px;
+    background: linear-gradient(90deg, transparent, rgba(78, 40, 40, 0.5), transparent);
+    line-height: 0.76em;
+    transform-style: preserve-3d;
+    text-shadow: 0 5px 15px rgba(48, 43, 43, 0.25);
+    transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(106px);
+}
+
+.container2 .boxy span i:nth-child(1) {
+    font-style: initial;
+    color: #ff0000;
+}
+
+.container2 .boxy span i:nth-child(2) {
+    font-style: initial;
+    color: #ff0000;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(247, 247, 247);
+    overflow: hidden;
+}

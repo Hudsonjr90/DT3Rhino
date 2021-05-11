@@ -314,6 +314,7 @@ html {
 
 section {
     display: flex;
+    object-fit: contain;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
